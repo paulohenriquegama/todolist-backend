@@ -13,4 +13,8 @@ router.get('/tarefas/:id', controller.getTarefaById)
 
 router.post('/add', controller.addTarefa)
 
+router.put('/tarefas/:id', controller.updateTarefa)
+
+router.delete('/tarefas/:id', controller.deleteTarefa)
+
 module.exports = router
