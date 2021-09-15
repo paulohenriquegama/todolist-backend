@@ -6,7 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const Conn = require('./models/conn/conn');
 
-var whitelist = ['http://localhost:3000', 'https://mytodolist-backend.herokuapp.com/']
+var whitelist = ['http://localhost:3000', 'https://mytodolist-backend.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
