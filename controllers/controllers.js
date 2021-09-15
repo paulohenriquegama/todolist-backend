@@ -13,10 +13,17 @@ const Tarefa = require('./../models/tarefas')
 
   exports.getTarefaById = async (req, res) => {
     const id = req.params.id
-    // if(!id){
-      
-    // }
+
     await Tarefa.findOne({ _id: id })
+      .then(tarefa => {
+        res.status(200).send(tarefa)
+      })
+      .catch(err => res.status(404).send("Tarefa não localizada."))
+  }
+
+  exports.getTarefaByStatus = async (req, res) => { 
+    console.log(req.params.status)
+    await Tarefa.find({ status: req.params.status })
       .then(tarefa => {
         res.status(200).send(tarefa)
       })
