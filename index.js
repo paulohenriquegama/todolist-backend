@@ -7,7 +7,7 @@ const cors = require('cors');
 const Conn = require('./models/conn/conn');
 
 const corsOptions = {
-  origin: 'https://mytodolist-backend.herokuapp.com/',
+  origin: 'https://mytodolist-frontend.herokuapp.com/',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
