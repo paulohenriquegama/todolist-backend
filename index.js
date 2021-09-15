@@ -35,6 +35,6 @@ const db_data = process.env.DB_DATA;
 
 Conn(db_url,db_user,db_pass,db_data);
 
-app.listen(port, () => {
+app.listen(processe.env.PORT || port, () => {
   console.info(`App rodando em: localhost:${port}`);
 })
