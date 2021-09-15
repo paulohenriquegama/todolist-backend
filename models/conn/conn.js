@@ -7,7 +7,7 @@ function Conn(url, user, pass, banco){
     useNewUrlParser:true,
     useUnifiedTopology: true,
   }).then(() => {
-    console.log("Mongodb Connected!!")
+    console.log("Mongodb Connected!!", banco)
   }).catch(err => console.error(err));
 }
 
