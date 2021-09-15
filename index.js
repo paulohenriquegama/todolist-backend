@@ -6,9 +6,20 @@ const express = require('express');
 const cors = require('cors');
 const Conn = require('./models/conn/conn');
 
+// const corsOptions = {
+//   origin: 'https://mytodolist-frontend.herokuapp.com',
+//   optionsSuccessStatus: 200,
+// }
+
+var whitelist = ['http://localhost:3000', 'https://mytodolist-backend.herokuapp.com']
 const corsOptions = {
-  origin: 'https://mytodolist-frontend.herokuapp.com',
-  optionsSuccessStatus: 200,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
 }
 
 const app = express();
