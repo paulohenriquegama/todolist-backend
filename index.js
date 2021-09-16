@@ -11,7 +11,7 @@ const Conn = require('./models/conn/conn');
 //   optionsSuccessStatus: 200,
 // }
 
-var whitelist = ['http://localhost:3000', 'https://mytodolist-backend.herokuapp.com']
+var whitelist = [ 'https://mytodolist-backend.herokuapp.com','http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
