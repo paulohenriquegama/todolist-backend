@@ -6,21 +6,21 @@ const express = require('express');
 const cors = require('cors');
 const Conn = require('./models/conn/conn');
 
-// const corsOptions = {
-//   origin: 'https://mytodolist-frontend.herokuapp.com',
-//   optionsSuccessStatus: 200,
-// }
-
-var whitelist = [ 'https://mytodolist-backend.herokuapp.com','http://localhost:3000']
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
+  origin: 'https://mytodolist-frontend.herokuapp.com',
+  optionsSuccessStatus: 200,
 }
+
+// var whitelist = [ 'https://mytodolist-backend.herokuapp.com','http://localhost:3000']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 const app = express();
 
